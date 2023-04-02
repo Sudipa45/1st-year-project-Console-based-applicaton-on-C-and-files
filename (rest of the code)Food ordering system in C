@@ -1,0 +1,1923 @@
+void items_Khalek_Hotel_Restaurant()
+{
+    system("cls");
+    gotoxy(44,13);
+    printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~**MENU**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+    gotoxy(44,14);
+    printf("Item Code#   Description-------------------Size--------------------Price(tk)\n");
+    gotoxy(44,15);
+    printf("[11]---------Beef Roll------------------------2x/1x-----------------------300/170");
+    gotoxy(44,16);
+    printf("[12]---------Hot Dog--------------------------2x/1x-----------------------280/150");
+    gotoxy(44,17);
+    printf("[13]---------Sub sandwitch--------------------2x/1x-----------------------290/160");
+    gotoxy(44,18);
+    printf("[14]---------Chicken pizza--------------------3x/2x/1x--------------------750/550/400");
+    gotoxy(44
+,19);
+    printf("[15]---------Chicken Cheese pizza-------------3x/2x/1x--------------------800/600/450");
+    gotoxy(44,20);
+    printf("[16]---------Chicken Burger-------------------2 layer/1 layer-------------280/140");
+    gotoxy(44,21);
+    printf("[17]---------Beef Burger----------------------2 layer/1 layer-------------300/150");
+    gotoxy(44,22);
+    printf("[18]---------Coke/pepsi-----------------------1 bottle--------------------30");
+    gotoxy(44,23);
+    printf("[19]---------Water----------------------------2 ltr/ 1 ltr /1/2 ltr-------30/20/15");
+}
+void  Khalek_Hotel_Restaurant()
+{
+    fflush(stdin);
+    int option = 1, x = 52;
+    char ch = '0';
+
+    while (1)
+    {
+        switch (ch)
+        {
+        case 77:
+            option++;
+            if (option == 5)
+                option = 1;
+            break;
+        case 75:
+            option--;
+            if (option == 0)
+                option = 4;
+            break;
+        }
+
+        h_light_rs(option);
+        ch = getch();
+        if (ch == 13)
+        {
+            switch (option)
+            {
+            case 1:
+                return menu_Khalek_Hotel_Restaurant();
+            case 2:
+                return receive_Khalek_Hotel_Restaurant();
+            case 3:
+                return  main_system();
+            case 4:
+                return makerinfo();
+            }
+        }
+    }
+}
+void menu_The_mad_gril()
+{
+    system("cls");
+    int n, in, qu;
+    char add[1000],fnm[30];
+    strcpy(p[order_count].name,travers);
+    gotoxy(53,10);
+    printf ("please enter address where to deliver food: ");
+    gotoxy(53,11);
+    gets(add);
+    strcpy(fnm,travers);
+    strcat(fnm, ".txt");
+    FILE *ftr;
+    ftr= fopen (fnm, "a");
+    fputs("\nDivision : Sylhet\n",ftr);
+    fputs("\nAddress : \n",ftr);
+    fputs(add,ftr);
+    fputs("\n",ftr);
+    fclose(ftr);
+    p[order_count].order_number = 10000+order_count;
+    items_The_mad_gril();
+    p[order_count].number_of_food = n;
+    p[order_count].cost = 0;
+    p[order_count].number_of_food = 0;
+
+level:
+    printf ("How many items you want to order? \n");
+    scanf ("%d", &n);
+    getchar ();
+    while (n--)
+    {
+
+        printf ("\nEnter chosen item code\n");
+        scanf ("%d", &in);
+        getchar();
+        switch(in)
+        {
+         case 11 :
+        {
+            printf ("Enter the size :1.full 2.half 3.quarter \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (450*qu);
+             if (i==2) p[order_count].cost += (250*qu);
+             if (i==2) p[order_count].cost += (180*qu);
+            break;
+        }
+        case 12 :
+        {
+            printf ("Enter the size : 1.full 2.half 3.quarter \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (400*qu);
+            if (i==2) p[order_count].cost += (250*qu);
+            if (i==2) p[order_count].cost += (150*qu);
+
+            break;
+        }
+        case 13 :
+        {
+            printf ("Enter the size : 1.full 2.half  \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (280*qu);
+            if (i==2) p[order_count].cost += (170*qu);
+
+
+            break;
+        }
+        case 14 :
+        {
+            printf ("Enter the size :1.full 2.half \n\n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (220*qu);
+            if (i==2) p[order_count].cost += (130*qu);
+
+
+
+            break;
+        }
+        case 15 :
+        {
+            printf ("Enter the size : 1.full 2.half 3.quarter \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (400*qu);
+            if (i==2) p[order_count].cost += (200*qu);
+            if (i==3) p[order_count].cost += (150*qu);
+
+
+            break;
+        }
+        case 16 :
+        {
+            printf ("Enter the size : 1.full 2.half 3.quarter \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (400*qu);
+            if (i==2) p[order_count].cost += (200*qu);
+            if (i==2) p[order_count].cost += (150*qu);
+
+
+
+
+            break;
+        }
+        case 17 :
+        {
+            printf ("Enter the size : 1. 2 layer   2.1 layer\n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (300*qu);
+            if (i==2) p[order_count].cost += (150*qu);
+            break;
+        }
+        case 18 :
+        {
+            printf ("Coke  :\n");
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+            p[order_count].cost += (30*qu);
+            break;
+        }
+        case 19 :
+        {
+            printf ("Water  : 2 ltr/ 1 ltr /  1/2 ltr \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (30*qu);
+            if (i==2) p[order_count].cost += (20*qu);
+            if (i==3) p[order_count].cost += (15*qu);
+            break;
+        }
+        default :
+        {
+            printf ("Invalid selection try again\n");
+            n++;
+        }
+        }
+    }
+    char temp;
+    int discount;
+    printf ("Do you want to order anything else?(y/n)\n ");
+    scanf("%c", &temp);
+    if (temp == 'y')
+        goto level;
+    printf ("\nNumber of food ordered %d\n", p[order_count].number_of_food);
+    if(p[order_count].cost>=3000)
+    {
+        discount=(p[order_count].cost*20)/100;
+        p[order_count].cost=p[order_count].cost-discount;
+    }
+    printf ("\nThank you %s for your order. Your bill is %dtk.\n", p[order_count].name, p[order_count].cost);
+    order_count ++;
+    printf ("\nPress any key to go to previous page and then confrim your order %s!\n", p[order_count].name);
+    getch();
+    The_mad_gril();
+}
+void receive_The_mad_gril()
+{
+system("cls");
+    if (order_count==0)
+    {
+        return The_mad_gril();
+    }
+    gotoxy(53,8);
+    printf ("Congo!!!Your order confirmed!!\n");
+    gotoxy(53,9);
+    printf ("Order no. %d by %s from  The mad gril will be delivered by your given address. Thank you!\n", p[served_count].order_number, p[served_count].name);
+    gotoxy(53,10);
+    printf ("Total order taken: %d\n", (order_count));
+    gotoxy(53,11);
+    printf ("Enjoy your meal\n\n");
+    served_count++;
+    gotoxy(53,12);
+    printf ("Press any key to give your feedback\n\n");
+    gotoxy(53,13);
+    getch();
+    rating();
+}
+void items_The_mad_gril()
+{
+    system("cls");
+    gotoxy(44,13);
+    printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~**MENU**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+    gotoxy(44,14);
+    printf("Item Code#   Description-------------------Size--------------------Price(tk)\n");
+    gotoxy(44,15);
+    printf("[11]---------Kabab Thali-------------------full/half/quarter--------------450/220/180");
+    gotoxy(44,16);
+    printf("[12]---------Chicken Tandoori--------------full/half/quarter--------------400/200/150");
+    gotoxy(44,17);
+    printf("[13]---------Fried Rice--------------------full/half----------------------280/170");
+    gotoxy(44,18);
+    printf("[14]---------Polao Rice--------------------full/half----------------------220/130");
+    gotoxy(44,19);
+    printf("[15]---------Chicken Tikka-----------------full/half/quarter--------------450/200/150");
+    gotoxy(44,20);
+    printf("[16]---------Chicken Hariyali Kabab--------full/half/quarter--------------450/200/150");
+    gotoxy(44,21);
+    printf("[17]---------Beef Burger-------------------2 layer/1 layer----------------300/150");
+    gotoxy(44,22);
+    printf("[18]---------Coke/pepsi--------------------1 bottle-----------------------30");
+    gotoxy(44,23);
+    printf("[19]---------Water-------------------------2 ltr/ 1 ltr /1/2 ltr----------30/20/15");
+}
+void  The_mad_gril()
+{
+    fflush(stdin);
+    int option = 1, x = 52;
+    char ch = '0';
+
+    while (1)
+    {
+        switch (ch)
+        {
+        case 77:
+            option++;
+            if (option == 5)
+                option = 1;
+            break;
+        case 75:
+            option--;
+            if (option == 0)
+                option = 4;
+            break;
+        }
+
+        h_light_rs(option);
+        ch = getch();
+        if (ch == 13)
+        {
+            switch (option)
+            {
+            case 1:
+                return menu_The_mad_gril();
+            case 2:
+                return receive_The_mad_gril();
+            case 3:
+                return  main_system();
+            case 4:
+                return makerinfo();
+            }
+        }
+    }
+}
+void menu_Panshi_Resturant()
+{
+    system("cls");
+    int n, in, qu;
+    char add[1000],fnm[30];
+    strcpy(p[order_count].name,travers);
+    gotoxy(53,10);
+    printf ("please enter address where to deliver food: ");
+    gotoxy(53,11);
+    gets(add);
+    strcpy(fnm,travers);
+    strcat(fnm, ".txt");
+    FILE *ftr;
+    ftr= fopen (fnm, "a");
+    fputs("\nDivision : Sylhet\n",ftr);
+    fputs("\nAddress : \n",ftr);
+    fputs(add,ftr);
+    fputs("\n",ftr);
+    fclose(ftr);
+    p[order_count].order_number = 10000+order_count;
+    items_Panshi_Resturant();
+    p[order_count].number_of_food = n;
+    p[order_count].cost = 0;
+    p[order_count].number_of_food = 0;
+
+level:
+    printf ("How many items you want to order? \n");
+    scanf ("%d", &n);
+    getchar ();
+    while (n--)
+    {
+
+        printf ("\nEnter chosen item code\n");
+        scanf ("%d", &in);
+        getchar();
+        switch(in)
+        {
+         case 11 :
+        {
+            printf ("Enter the size :1.full 2.half  \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (280*qu);
+             if (i==2) p[order_count].cost += (140*qu);
+
+            break;
+        }
+        case 12 :
+        {
+            printf ("Enter the size :1.full 2.half \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (290*qu);
+            if (i==2) p[order_count].cost += (150*qu);
+
+            break;
+        }
+        case 13 :
+        {
+            printf ("Enter the size : 1.full 2.half  \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (220*qu);
+            if (i==2) p[order_count].cost += (110*qu);
+
+
+            break;
+        }
+        case 14 :
+        {
+            printf ("Enter the size :1.full 2.half \n\n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (190*qu);
+            if (i==2) p[order_count].cost += (110*qu);
+
+
+
+            break;
+        }
+        case 15 :
+        {
+            printf ("Enter the size : 1.full 2.half  \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (190*qu);
+            if (i==2) p[order_count].cost += (110*qu);
+
+            break;
+        }
+        case 16 :
+        {
+            printf ("Enter the size : 1.full 2.half  \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (400*qu);
+            if (i==2) p[order_count].cost += (200*qu);
+
+
+
+            break;
+        }
+        case 17 :
+        {
+            printf ("Enter the size : 1.full 2.half \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (300*qu);
+            if (i==2) p[order_count].cost += (150*qu);
+            break;
+        }
+        case 18 :
+        {
+            printf ("Coke  :\n");
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+            p[order_count].cost += (30*qu);
+            break;
+        }
+        case 19 :
+        {
+            printf ("Water  : 2 ltr/ 1 ltr /  1/2 ltr \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (30*qu);
+            if (i==2) p[order_count].cost += (20*qu);
+            if (i==3) p[order_count].cost += (15*qu);
+            break;
+        }
+        default :
+        {
+            printf ("Invalid selection try again\n");
+            n++;
+        }
+        }
+    }
+    char temp;int discount;
+    printf ("Do you want to order anything else?(y/n)\n ");
+    scanf("%c", &temp);
+    if (temp == 'y')
+        goto level;
+    printf ("\nNumber of food ordered %d\n", p[order_count].number_of_food);
+    if(p[order_count].cost>=3000)
+    {
+        discount=(p[order_count].cost*20)/100;
+        p[order_count].cost=p[order_count].cost-discount;
+    }
+    printf ("\nThank you %s for your order. Your bill is %dtk.\n", p[order_count].name, p[order_count].cost);
+    order_count ++;
+    printf ("\nPress any key to go to previous page and then confrim your order %s!\n", p[order_count].name);
+    getch();
+    Panshi_Resturant();
+}
+void receive_Panshi_Resturant()
+{
+
+    system("cls");
+    if (order_count==0)
+    {
+        return Panshi_Resturant();
+    }
+    gotoxy(53,8);
+    printf ("Congo!!!Your order confirmed!!\n");
+    gotoxy(53,9);
+    printf ("Order no. %d by %s from  Panshi Resturant will be delivered by your given address. Thank you!\n", p[served_count].order_number, p[served_count].name);
+    gotoxy(53,10);
+    printf ("Total order taken: %d\n", (order_count));
+    gotoxy(53,11);
+    printf ("Enjoy your meal\n\n");
+    served_count++;
+    gotoxy(53,12);
+    printf ("Press any key to give your feedback\n\n");
+    gotoxy(53,13);
+    getch();
+    rating();
+}
+void items_Panshi_Resturant()
+{
+    system("cls");
+    gotoxy(44,13);
+    printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~**MENU**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+    gotoxy(44,14);
+    printf("Item Code#   Description-------------------Size--------------------Price(tk)\n");
+    gotoxy(44,15);
+    printf("[11]---------Palok Paneer------------------full/half---------------------450/220");
+     gotoxy(44,16);
+    printf("[12]---------Vagetable Do peyaja-----------full/half----------------------400/200");
+    gotoxy(44,17);
+    printf("[13]---------Dal Tarka---------------------full/half----------------------280/170");
+    gotoxy(44,18);
+    printf("[14]---------Yellow Dal--------------------full/half----------------------220/130");
+    gotoxy(44,19);
+    printf("[15]---------Chicken Tikka-----------------full/half----------------------450/200");
+    gotoxy(44,20);
+    printf("[16]---------Nawab special Salad-----------full/half----------------------450/200");
+    gotoxy(44,21);
+    printf("[17]---------Beef Burger-------------------full/half----------------------300/150");
+    gotoxy(44,22);
+    printf("[18]---------Coke/pepsi--------------------1 bottle-----------------------30");
+    gotoxy(44,23);
+    printf("[19]---------Water-------------------------2 ltr/ 1 ltr /1/2 ltr----------30/20/15");
+}
+void  Panshi_Resturant()
+{
+    fflush(stdin);
+    int option = 1, x = 52;
+    char ch = '0';
+
+    while (1)
+    {
+        switch (ch)
+        {
+        case 77:
+            option++;
+            if (option == 5)
+                option = 1;
+            break;
+        case 75:
+            option--;
+            if (option == 0)
+                option = 4;
+            break;
+        }
+
+        h_light_rs(option);
+        ch = getch();
+        if (ch == 13)
+        {
+            switch (option)
+            {
+            case 1:
+                return menu_Panshi_Resturant();
+            case 2:
+                return receive_Panshi_Resturant();
+            case 3:
+                return  main_system();
+            case 4:
+                return makerinfo();
+            }
+        }
+    }
+}
+void menu_Nawabs_kitchen()
+{
+    system("cls");
+    int n, in, qu;
+    char add[1000],fnm[30];
+    strcpy(p[order_count].name,travers);
+    gotoxy(53,10);
+    printf ("please enter address where to deliver food: ");
+    gotoxy(53,11);
+    gets(add);
+    strcpy(fnm,travers);
+    strcat(fnm, ".txt");
+    FILE *ftr;
+    ftr= fopen (fnm, "a");
+    fputs("\nDivision : Sylhet\n",ftr);
+    fputs("\nAddress : \n",ftr);
+    fputs(add,ftr);
+    fputs("\n",ftr);
+    fclose(ftr);
+    p[order_count].order_number = 10000+order_count;
+    items_Nawabs_kitchen();
+    p[order_count].number_of_food = n;
+    p[order_count].cost = 0;
+    p[order_count].number_of_food = 0;
+
+level:
+    printf ("How many items you want to order? \n");
+    scanf ("%d", &n);
+    getchar ();
+    while (n--)
+    {
+
+        printf ("\nEnter chosen item code\n");
+        scanf ("%d", &in);
+        getchar();
+        switch(in)
+        {
+        case 11 :
+        {
+            printf ("Enter the size :1. large 2. Small  \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (260*qu);
+             if (i==2) p[order_count].cost += (150*qu);
+            break;
+        }
+        case 12 :
+        {
+            printf ("Enter the size : 1. large 2. Small \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (260*qu);
+            if (i==2) p[order_count].cost += (150*qu);
+
+            break;
+        }
+        case 13 :
+        {
+            printf ("Enter the size : 1. large 2. Small \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (150*qu);
+            if (i==2) p[order_count].cost += (70*qu);
+
+            break;
+        }
+        case 14 :
+        {
+            printf ("Enter the size :1. large 2. Small \n\n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (160*qu);
+            if (i==2) p[order_count].cost += (80*qu);
+
+
+
+            break;
+        }
+        case 15 :
+        {
+            printf ("Enter the size : 1.full 2.half \n");
+             int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (280*qu);
+            if (i==2) p[order_count].cost += (140*qu);
+
+
+
+            break;
+        }
+        case 16 :
+        {
+            printf ("Enter the size : 1.full 2.half  \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (260*qu);
+            if (i==2) p[order_count].cost += (140*qu);
+
+
+            break;
+        }
+        case 17 :
+        {
+            printf ("Enter the size : 1.full 2.half \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (300*qu);
+            if (i==2) p[order_count].cost += (150*qu);
+            break;
+        }
+        case 18 :
+        {
+            printf ("Coke  :\n");
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+            p[order_count].cost += (30*qu);
+            break;
+        }
+        case 19 :
+        {
+            printf ("Water  : 2 ltr/ 1 ltr /  1/2 ltr \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (30*qu);
+            if (i==2) p[order_count].cost += (20*qu);
+            if (i==3) p[order_count].cost += (15*qu);
+            break;
+        }
+        default :
+        {
+            printf ("Invalid selection try again\n");
+            n++;
+        }
+        }
+    }
+    char temp;int discount;
+    printf ("Do you want to order anything else?(y/n)\n ");
+    scanf("%c", &temp);
+    if (temp == 'y')
+        goto level;
+    printf ("\nNumber of food ordered %d\n", p[order_count].number_of_food);
+    if(p[order_count].cost>=3000)
+    {
+        discount=(p[order_count].cost*20)/100;
+        p[order_count].cost=p[order_count].cost-discount;
+    }
+    printf ("\nThank you %s for your order. Your bill is %dtk.\n", p[order_count].name, p[order_count].cost);
+    order_count ++;
+    printf ("\nPress any key to go to previous page and then confrim your order %s!\n", p[order_count].name);
+    getch();
+    Nawabs_kitchen();
+}
+void receive_Nawabs_kitchen()
+{
+    system("cls");
+    if (order_count==0)
+    {
+        return Nawabs_kitchen();
+    }
+    gotoxy(53,8);
+    printf ("Congo!!!Your order confirmed!!\n");
+    gotoxy(53,9);
+    printf ("Order no. %d by %s from  Nawabs kitchen will be delivered by your given address. Thank you!\n", p[served_count].order_number, p[served_count].name);
+    gotoxy(53,10);
+    printf ("Total order taken: %d\n", (order_count));
+    gotoxy(53,11);
+    printf ("Enjoy your meal\n\n");
+    served_count++;
+    gotoxy(53,12);
+    printf ("Press any key to give your feedback\n\n");
+    gotoxy(53,13);
+    getch();
+    rating();
+}
+void items_Nawabs_kitchen()
+{
+    system("cls");
+    gotoxy(44,13);
+    printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~**MENU**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+    gotoxy(44,14);
+    printf("Item Code#   Description-------------------Size--------------------Price(tk)\n");
+    gotoxy(44,15);
+    printf("[11]---------chicken BBq------------------------large/small-----------------------260/150");
+    gotoxy(44,16);
+    printf("[12]---------Grill------------------------------large/small-----------------------260/150");
+    gotoxy(44,17);
+    printf("[13]---------Fried Chicken----------------------large/small-----------------------150/70");
+    gotoxy(44,18);
+    printf("[14]---------Crispy Chicken---------------------large/small-----------------------160/80");
+    gotoxy(44,19);
+    printf("[15]---------Chocolate oreo milkshake-----------Full/half-------------------------280/140");
+    gotoxy(44,20);
+    printf("[16]---------Milkshake--------------------------Full/half-------------------------260/140");
+    gotoxy(44,21);
+    printf("[17]---------Hot Coffee-------------------------Full/half-------------------------300/150");
+    gotoxy(44,22);
+    printf("[18]---------Coke/pepsi-------------------------1 bottle--------------------------30");
+    gotoxy(44,23);
+    printf("[19]---------Water----------------------------2 ltr/ 1 ltr /1/2 ltr---------------30/20/15");
+}
+void  Nawabs_kitchen()
+{
+    fflush(stdin);
+    int option = 1, x = 52;
+    char ch = '0';
+    while (1)
+    {
+        switch (ch)
+        {
+        case 77:
+            option++;
+            if (option == 5)
+                option = 1;
+            break;
+        case 75:
+            option--;
+            if (option == 0)
+                option = 4;
+            break;
+        }
+
+        h_light_rs(option);
+        ch = getch();
+        if (ch == 13)
+        {
+            switch (option)
+            {
+            case 1:
+                return menu_Nawabs_kitchen();
+            case 2:
+                return receive_Nawabs_kitchen();
+            case 3:
+                return  main_system();
+            case 4:
+                return makerinfo();
+            }
+        }
+    }
+}
+void menu_Saffron_Restaurant()
+{
+    system("cls");
+    int n, in, qu;
+    char add[1000],fnm[30];
+    strcpy(p[order_count].name,travers);
+    gotoxy(53,10);
+    printf ("please enter address where to deliver food: ");
+    gotoxy(53,11);
+    gets(add);
+    strcpy(fnm,travers);
+    strcat(fnm, ".txt");
+    FILE *ftr;
+    ftr= fopen (fnm, "a");
+    fputs("\nDivision : Maymensingh\n",ftr);
+    fputs("\nAddress : \n",ftr);
+    fputs(add,ftr);
+    fputs("\n",ftr);
+    fclose(ftr);
+    p[order_count].order_number = 10000+order_count;
+    items_Saffron_Restaurant();
+    p[order_count].number_of_food = n;
+    p[order_count].cost = 0;
+    p[order_count].number_of_food = 0;
+
+level:
+    printf ("\nHow many items you want to order? \n");
+    scanf ("%d", &n);
+    getchar ();
+    while (n--)
+    {
+
+        printf ("\nEnter chosen item code\n");
+        scanf ("%d", &in);
+        getchar();
+        switch(in)
+        {
+        case 11 :
+        {
+            printf ("Enter the size : 1. Large 2. Small \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (300*qu);
+             if (i==2) p[order_count].cost += (170*qu);
+            // if (i==3)p[order_count].cost += (450*qu);
+            break;
+        }
+        case 12 :
+        {
+            printf ("Enter the size : 1. Large 2. Small \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (280*qu);
+            if (i==2) p[order_count].cost += (150*qu);
+            // if (i==3) p[order_count].cost += (650*qu);
+            // if (i==4)p[order_count].cost += (330*qu);
+
+            break;
+        }
+        case 13 :
+        {
+            printf ("Enter the size : 1. Large 2. Small \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (780*qu);
+            if (i==2) p[order_count].cost += (680*qu);
+            // if (i==3) p[order_count].cost += (550*qu);
+            // if (i==4)p[order_count].cost += (290*qu);
+
+            break;
+        }
+        case 14 :
+        {
+            printf ("Enter the size : 1. Large 2. Small  \n\n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (750*qu);
+            if (i==2) p[order_count].cost += (500*qu);
+            // if (i==3) p[order_count].cost += (400*qu);
+            // if (i==4)p[order_count].cost += (330*qu);
+
+            break;
+        }
+        case 15 :
+        {
+            printf ("Enter the size : 1. 1 Bowl 2. 1.5 Bowl \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (600*qu);
+            if (i==2) p[order_count].cost += (800*qu);
+            // if (i==3) p[order_count].cost += (450*qu);
+            // if (i==4)p[order_count].cost += (350*qu);
+
+            break;
+        }
+        case 16 :
+        {
+            printf ("Enter the size : 1. 1 Layer 2. 2 Layer \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (280*qu);
+            if (i==2) p[order_count].cost += (140*qu);
+            // if (i==3) p[order_count].cost += (800*qu);
+            // if (i==4)p[order_count].cost += (400*qu);
+
+            break;
+        }
+        case 17 :
+        {
+            printf ("Enter the size : 1. 1 Layer 2. 2 Layer\n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (300*qu);
+            if (i==2) p[order_count].cost += (150*qu);
+            break;
+        }
+        case 18 :
+        {
+            printf ("Coke  : 1 Glass\n");
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+            p[order_count].cost += (30*qu);
+            break;
+        }
+        case 19 :
+        {
+            printf ("Water  : 1. 2 ltr 2. 1 ltr 3. 1/2 ltr \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (30*qu);
+            if (i==2) p[order_count].cost += (20*qu);
+            if (i==3) p[order_count].cost += (15*qu);
+            break;
+        }
+        default :
+        {
+            printf ("Invalid selection try again\n");
+            n++;
+        }
+        }
+    }
+    char temp;
+    int discount;
+    printf ("Do you want to order anything else?(y/n)\n ");
+    scanf("%c", &temp);
+    if (temp == 'y')
+        goto level;
+    printf ("\nNumber of food ordered %d\n", p[order_count].number_of_food);
+    if(p[order_count].cost>=3000)
+    {
+        discount=(p[order_count].cost*20)/100;
+        p[order_count].cost=p[order_count].cost-discount;
+    }
+    printf ("\nThank you %s for your order. Your bill is %dtk.\n", p[order_count].name, p[order_count].cost);
+    order_count ++;
+    printf ("\nPress any key to go to previous page and then confrim your order %s!\n", p[order_count].name);
+    getch();
+    Saffron_Restaurant();
+}
+void receive_Saffron_Restaurant()
+{
+    system("cls");
+    if (order_count==0)
+    {
+        return Saffron_Restaurant();
+    }
+    gotoxy(53,8);
+    printf ("Congo!!!Your order confirmed!!\n");
+    gotoxy(53,9);
+    printf ("Order no. %d by %s from Shaffron RESTAURANT will be delivered by your given address. Thank you!\n", p[served_count].order_number, p[served_count].name);
+    gotoxy(53,10);
+    printf ("Total order taken: %d\n", (order_count));
+    gotoxy(53,11);
+    printf ("Enjoy your meal\n\n");
+    served_count++;
+    gotoxy(53,12);
+    printf ("Press any key to give your feedback\n\n");
+    gotoxy(53,13);
+    getch();
+    rating();
+}
+void items_Saffron_Restaurant()
+{
+    system("cls");
+    gotoxy(44,13);
+    printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~**MENU**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+    gotoxy(44,14);
+    printf("Item Code#   Description---------------------Size--------------------------------Price(tk)\n");
+    gotoxy(44,15);
+    printf("[11]---------Vetki mas-----------------------Large/Small-------------------------300/170");
+    gotoxy(44,16);
+    printf("[12]---------Shing  Mas----------------------Large/Small-------------------------280/150");
+    gotoxy(44,17);
+    printf("[13]---------Shorisha Ilish------------------Large/Small-------------------------780/680");
+    gotoxy(44,18);
+    printf("[14]---------Ilish fry-----------------------Large/Small-------------------------750/500");
+    gotoxy(44,19);
+    printf("[15]---------Chicken rejala------------------1 Bowl/1.5 Bowl---------------------600/800");
+    gotoxy(44,20);
+    printf("[16]---------Beef kala vuna------------------1 layer/2 layer---------------------280/140");
+    gotoxy(44,21);
+    printf("[17]---------Chicken roast-------------------1 layer/2 layer---------------------300/150");
+    gotoxy(44,22);
+    printf("[18]---------Coke----------------------------1 Glass-----------------------------30");
+    gotoxy(44,23);
+    printf("[19]---------Water---------------------------2 ltr/ 1 ltr /1/2 ltr---------------30/20/15");
+}
+void Saffron_Restaurant()
+{
+    fflush(stdin);
+    int option = 1, x = 52;
+    char ch = '0';
+
+    while (1)
+    {
+        switch (ch)
+        {
+        case 77:
+            option++;
+            if (option == 5)
+                option = 1;
+            break;
+        case 75:
+            option--;
+            if (option == 0)
+                option = 4;
+            break;
+        }
+
+        h_light_rs(option);
+        ch = getch();
+        if (ch == 13)
+        {
+            switch (option)
+            {
+            case 1:
+                return menu_Saffron_Restaurant();
+            case 2:
+                return receive_Saffron_Restaurant();
+            case 3:
+                return  main_system();
+            case 4:
+                return makerinfo();
+            }
+        }
+    }
+}
+void menu_Chef_Time_Restaurant()
+{
+    system("cls");
+    int n, in, qu;
+    char add[1000],fnm[30];
+    strcpy(p[order_count].name,travers);
+    gotoxy(53,10);
+    printf ("please enter address where to deliver food: ");
+    gotoxy(53,11);
+    gets(add);
+    strcpy(fnm,travers);
+    strcat(fnm, ".txt");
+    FILE *ftr;
+    ftr= fopen (fnm, "a");
+    fputs("\nDivision : Maymensingh\n",ftr);
+    fputs("\nAddress : \n",ftr);
+    fputs(add,ftr);
+    fputs("\n",ftr);
+    fclose(ftr);
+    p[order_count].order_number = 10000+order_count;
+    items_Chef_Time_Restaurant();
+    p[order_count].number_of_food = n;
+    p[order_count].cost = 0;
+    p[order_count].number_of_food = 0;
+level:
+    printf ("\nHow many items you want to order? \n");
+    scanf ("%d", &n);
+    getchar ();
+    while (n--)
+    {
+
+        printf ("\nEnter chosen item code\n");
+        scanf ("%d", &in);
+        getchar();
+        switch(in)
+        {
+        case 11 :
+        {
+            printf ("Enter the size : 1. Large 2. Small \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (300*qu);
+             if (i==2) p[order_count].cost += (170*qu);
+            // if (i==3)p[order_count].cost += (450*qu);
+            break;
+        }
+        case 12 :
+        {
+            printf ("Enter the size : 1. Large 2. Small \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (280*qu);
+            if (i==2) p[order_count].cost += (150*qu);
+            // if (i==3) p[order_count].cost += (650*qu);
+            // if (i==4)p[order_count].cost += (330*qu);
+
+            break;
+        }
+        case 13 :
+        {
+            printf ("Enter the size : 1. Large 2. Small \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (780*qu);
+            if (i==2) p[order_count].cost += (680*qu);
+            // if (i==3) p[order_count].cost += (550*qu);
+            // if (i==4)p[order_count].cost += (290*qu);
+
+            break;
+        }
+        case 14 :
+        {
+            printf ("Enter the size : 1. Large 2. Small  \n\n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (750*qu);
+            if (i==2) p[order_count].cost += (500*qu);
+
+            break;
+        }
+        case 15 :
+        {
+            printf ("Enter the size : 1. 1 Bowl 2. 1.5 Bowl \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (600*qu);
+            if (i==2) p[order_count].cost += (800*qu);
+            break;
+        }
+        case 16 :
+        {
+            printf ("Enter the size : 1. 1 Layer 2. 2 Layer \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (280*qu);
+            if (i==2) p[order_count].cost += (140*qu);
+
+            break;
+        }
+        case 17 :
+        {
+            printf ("Enter the size : 1. 1 Layer 2. 2 Layer\n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (300*qu);
+            if (i==2) p[order_count].cost += (150*qu);
+            break;
+        }
+        case 18 :
+        {
+            printf ("Coke  : 1 Glass\n");
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+            p[order_count].cost += (30*qu);
+            break;
+        }
+        case 19 :
+        {
+            printf ("Water  : 1. 2 ltr 2. 1 ltr 3. 1/2 ltr \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (30*qu);
+            if (i==2) p[order_count].cost += (20*qu);
+            if (i==3) p[order_count].cost += (15*qu);
+            break;
+        }
+        default :
+        {
+            printf ("Invalid selection try again\n");
+            n++;
+        }
+        }
+    }
+    char temp;
+    int discount;
+    printf ("Do you want to order anything else?(y/n)\n ");
+    scanf("%c", &temp);
+    if (temp == 'y')
+        goto level;
+    printf ("\nNumber of food ordered %d\n", p[order_count].number_of_food);
+    if(p[order_count].cost>=3000)
+    {
+        discount=(p[order_count].cost*20)/100;
+        p[order_count].cost=p[order_count].cost-discount;
+    }
+    printf ("\nThank you %s for your order. Your bill is %dtk.\n", p[order_count].name, p[order_count].cost);
+    order_count ++;
+    printf ("\nPress any key to go to previous page and then confrim your order %s!\n", p[order_count].name);
+    getch();
+    Chef_Time_Restaurant();
+}
+void receive_Chef_Time_Restaurant()
+{
+   system("cls");
+    if (order_count==0)
+    {
+        return Chef_Time_Restaurant();
+    }
+    gotoxy(53,8);
+    printf ("Congo!!!Your order confirmed!!\n");
+    gotoxy(53,9);
+    printf ("Order no. %d by %s from Chef Time Restaurant will be delivered by your given address. Thank you!\n", p[served_count].order_number, p[served_count].name);
+    gotoxy(53,10);
+    printf ("Total order taken: %d\n", (order_count));
+    gotoxy(53,11);
+    printf ("Enjoy your meal\n\n");
+    served_count++;
+    gotoxy(53,12);
+    printf ("Press any key to give your feedback\n\n");
+    gotoxy(53,13);
+    getch();
+    rating();
+}
+void items_Chef_Time_Restaurant()
+{
+    system("cls");
+    gotoxy(44,13);
+    printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~**MENU**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+    gotoxy(44,14);
+    printf("Item Code#   Description---------------------Size--------------------------------Price(tk)\n");
+    gotoxy(44,15);
+    printf("[11]---------Vetki mas-----------------------Large/Small-------------------------300/170");
+    gotoxy(44,16);
+    printf("[12]---------Shing  Mas----------------------Large/Small-------------------------280/150");
+    gotoxy(44,17);
+    printf("[13]---------Shorisha Ilish------------------Large/Small-------------------------780/680");
+    gotoxy(44,18);
+    printf("[14]---------Ilish fry-----------------------Large/Small-------------------------750/500");
+    gotoxy(44,19);
+    printf("[15]---------Chicken rejala------------------1 Bowl/1.5 Bowl---------------------600/800");
+    gotoxy(44,20);
+    printf("[16]---------Beef kala vuna------------------1 layer/2 layer---------------------280/140");
+    gotoxy(44,21);
+    printf("[17]---------Chicken roast-------------------1 layer/2 layer---------------------300/150");
+    gotoxy(44,22);
+    printf("[18]---------Coke----------------------------1 Glass-----------------------------30");
+    gotoxy(44,23);
+    printf("[19]---------Water---------------------------2 ltr/ 1 ltr /1/2 ltr---------------30/20/15");
+}
+void Chef_Time_Restaurant()
+{
+    fflush(stdin);
+    int option = 1, x = 52;
+    char ch = '0';
+
+    while (1)
+    {
+        switch (ch)
+        {
+        case 77:
+            option++;
+            if (option == 5)
+                option = 1;
+            break;
+        case 75:
+            option--;
+            if (option == 0)
+                option = 4;
+            break;
+        }
+
+        h_light_rs(option);
+        ch = getch();
+        if (ch == 13)
+        {
+            switch (option)
+            {
+            case 1:
+                return menu_Chef_Time_Restaurant();
+            case 2:
+                return receive_Chef_Time_Restaurant();
+            case 3:
+                return  main_system();
+            case 4:
+                return makerinfo();
+            }
+        }
+    }
+}
+void menu_Mood_On()
+{
+    system("cls");
+    int n, in, qu;
+    char add[1000],fnm[30];
+    strcpy(p[order_count].name,travers);
+    gotoxy(53,10);
+    printf ("please enter address where to deliver food: ");
+    gotoxy(53,11);
+    gets(add);
+    strcpy(fnm,travers);
+    strcat(fnm, ".txt");
+    FILE *ftr;
+    ftr= fopen (fnm, "a");
+    fputs("\nDivision : Maymensingh\n",ftr);
+    fputs("\nAddress : \n",ftr);
+    fputs(add,ftr);
+    fputs("\n",ftr);
+    fclose(ftr);
+    p[order_count].order_number = 10000+order_count;
+    items_Mood_On();
+    p[order_count].number_of_food = n;
+    p[order_count].cost = 0;
+    p[order_count].number_of_food = 0;
+level:
+    printf ("\nHow many items you want to order?\n");
+    scanf ("%d", &n);
+    getchar ();
+    while (n--)
+    {
+
+        printf ("\nEnter chosen item code\n");
+        scanf ("%d", &in);
+        getchar();
+        switch(in)
+        {
+        case 11 :
+        {
+            printf ("Enter the size : 1. Large 2. Small \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (300*qu);
+             if (i==2) p[order_count].cost += (170*qu);
+            // if (i==3)p[order_count].cost += (450*qu);
+            break;
+        }
+        case 12 :
+        {
+            printf ("Enter the size : 1. Large 2. Small \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (280*qu);
+            if (i==2) p[order_count].cost += (150*qu);
+            // if (i==3) p[order_count].cost += (650*qu);
+            // if (i==4)p[order_count].cost += (330*qu);
+
+            break;
+        }
+        case 13 :
+        {
+            printf ("Enter the size : 1. Large 2. Small \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (780*qu);
+            if (i==2) p[order_count].cost += (680*qu);
+            // if (i==3) p[order_count].cost += (550*qu);
+            // if (i==4)p[order_count].cost += (290*qu);
+
+            break;
+        }
+        case 14 :
+        {
+            printf ("Enter the size : 1. Large 2. Small  \n\n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (750*qu);
+            if (i==2) p[order_count].cost += (500*qu);
+            // if (i==3) p[order_count].cost += (400*qu);
+            // if (i==4)p[order_count].cost += (330*qu);
+
+            break;
+        }
+        case 15 :
+        {
+            printf ("Enter the size : 1. 1 Bowl 2. 1.5 Bowl \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (600*qu);
+            if (i==2) p[order_count].cost += (800*qu);
+            // if (i==3) p[order_count].cost += (450*qu);
+            // if (i==4)p[order_count].cost += (350*qu);
+
+            break;
+        }
+        case 16 :
+        {
+            printf ("Enter the size : 1. 1 Layer 2. 2 Layer \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (280*qu);
+            if (i==2) p[order_count].cost += (140*qu);
+            // if (i==3) p[order_count].cost += (800*qu);
+            // if (i==4)p[order_count].cost += (400*qu);
+
+            break;
+        }
+        case 17 :
+        {
+            printf ("Enter the size : 1. 1 Layer 2. 2 Layer\n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (300*qu);
+            if (i==2) p[order_count].cost += (150*qu);
+            break;
+        }
+        case 18 :
+        {
+            printf ("Coke  : 1 Glass\n");
+
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+            p[order_count].cost += (30*qu);
+            break;
+        }
+        case 19 :
+        {
+            printf ("Water  : 1. 2 ltr 2. 1 ltr 3. 1/2 ltr \n");
+            int i;
+            scanf ("%d", &i);
+            getchar();
+            printf ("Please enter the quantity: ");
+            scanf ("%d", &qu);
+            getchar();
+
+            p[order_count].number_of_food +=qu;
+
+            if (i==1) p[order_count].cost += (30*qu);
+            if (i==2) p[order_count].cost += (20*qu);
+            if (i==3) p[order_count].cost += (15*qu);
+            break;
+        }
+        default :
+        {
+            printf ("Invalid selection try again\n");
+            n++;
+        }
+        }
+    }
+    char temp;
+    int discount;
+    printf ("Do you want to order anything else?(y/n)\n ");
+    scanf("%c", &temp);
+    if (temp == 'y')
+        goto level;
+    printf ("\nNumber of food ordered %d\n", p[order_count].number_of_food);
+    if(p[order_count].cost>=3000)
+    {
+        discount=(p[order_count].cost*20)/100;
+        p[order_count].cost=p[order_count].cost-discount;
+    }
+    printf ("\nThank you %s for your order. Your bill is %dtk.\n", p[order_count].name, p[order_count].cost);
+    order_count ++;
+     printf ("\nPress any key to go to previous page and then confrim your order %s!\n", p[order_count].name);
+    getch();
+    Mood_On();
+}
+void receive_Mood_On()
+{
+    system("cls");
+    if (order_count==0)
+    {
+        return receive_Mood_On();
+    }
+    gotoxy(53,8);
+    printf ("Congo!!!Your order confirmed!!\n");
+    gotoxy(53,9);
+    printf ("Order no. %d by %s from Mood On will be delivered by your given address. Thank you!\n", p[served_count].order_number, p[served_count].name);
+    gotoxy(53,10);
+    printf ("Total order taken: %d\n", (order_count));
+    gotoxy(53,11);
+    printf ("Enjoy your meal\n\n");
+    served_count++;
+    gotoxy(53,12);
+    printf ("Press any key to give your feedback\n\n");
+    gotoxy(53,13);
+    getch();
+    rating();
+}
+void items_Mood_On()
+{
+    system("cls");
+    gotoxy(44,13);
+    printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~**MENU**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+    gotoxy(44,14);
+    printf("Item Code#   Description---------------------Size--------------------------------Price(tk)\n");
+    gotoxy(44,15);
+    printf("[11]---------Vetki mas-----------------------Large/Small-------------------------300/170");
+    gotoxy(44,16);
+    printf("[12]---------Shing  Mas----------------------Large/Small-------------------------280/150");
+    gotoxy(44,17);
+    printf("[13]---------Shorisha Ilish------------------Large/Small-------------------------780/680");
+    gotoxy(44,18);
+    printf("[14]---------Ilish fry-----------------------Large/Small-------------------------750/500");
+    gotoxy(44,19);
+    printf("[15]---------Chicken rejala------------------1 Bowl/1.5 Bowl---------------------600/800");
+    gotoxy(44,20);
+    printf("[16]---------Beef kala vuna------------------1 layer/2 layer---------------------280/140");
+    gotoxy(44,21);
+    printf("[17]---------Chicken roast-------------------1 layer/2 layer---------------------300/150");
+    gotoxy(44,22);
+    printf("[18]---------Coke----------------------------1 Glass-----------------------------30");
+    gotoxy(44,23);
+    printf("[19]---------Water---------------------------2 ltr/ 1 ltr /1/2 ltr---------------30/20/15");
+}
+void Mood_On()
+{
+    fflush(stdin);
+    int option = 1, x = 52;
+    char ch = '0';
+
+    while (1)
+    {
+        switch (ch)
+        {
+        case 77:
+            option++;
+            if (option == 5)
+                option = 1;
+            break;
+        case 75:
+            option--;
+            if (option == 0)
+                option = 4;
+            break;
+        }
+
+        h_light_rs(option);
+        ch = getch();
+        if (ch == 13)
+        {
+            switch (option)
+            {
+            case 1:
+                return menu_Mood_On();
+            case 2:
+                return receive_Mood_On();
+            case 3:
+                return  main_system();
+            case 4:
+                return makerinfo();
+            }
+        }
+    }
+}
